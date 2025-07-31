@@ -69,6 +69,80 @@
 
 
 
+// import express from 'express';
+// import cors from 'cors';
+// import 'dotenv/config';
+// import { clerkMiddleware, requireAuth } from '@clerk/express';
+// import aiRouter from './routes/aiRoutes.js';
+// import connectCloudinary from './configs/cloudinary.js';
+// import userRouter from './routes/userRoutes.js';
+
+
+
+// const cors = require("cors");
+
+// app.use(
+//   cors({
+//     origin: "https://aiflow-1-git-main-amrita-mishras-projects.vercel.app",
+//     credentials: true, // if using cookies or auth
+//   })
+// );
+
+
+
+
+// const app = express();
+
+// // ✅ Allowed origins for CORS
+// const allowedOrigins = [
+//   'http://localhost:5173',
+//   'https://aiflow-1-git-main-amrita-mishras-projects.vercel.app/' // 🔁 Replace this with your actual Vercel frontend URL
+// ];
+
+// // ✅ CORS Configuration
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (!origin || allowedOrigins.includes(origin)) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error('Not allowed by CORS'));
+//       }
+//     },
+//     credentials: true,
+//   })
+// );
+
+// // ✅ JSON body parsing
+// app.use(express.json());
+
+// // ✅ Clerk auth middleware
+// app.use(clerkMiddleware());
+
+// // ✅ Connect to Cloudinary
+// await connectCloudinary();
+
+// // ✅ Test public route
+// app.get('/', (req, res) => res.send('Server is Live!'));
+
+// // ✅ Protected Routes
+// app.use('/api/ai', requireAuth(), aiRouter);
+// app.use('/api/user', requireAuth(), userRouter);
+
+// // ✅ Start the server
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
+
+
+
+
+
+
+
+// server.js (ESM compatible)
+
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
@@ -77,29 +151,15 @@ import aiRouter from './routes/aiRoutes.js';
 import connectCloudinary from './configs/cloudinary.js';
 import userRouter from './routes/userRoutes.js';
 
-
-
-const cors = require("cors");
-
-app.use(
-  cors({
-    origin: "https://aiflow-1-git-main-amrita-mishras-projects.vercel.app",
-    credentials: true, // if using cookies or auth
-  })
-);
-
-
-
-
 const app = express();
 
-// ✅ Allowed origins for CORS
+// ✅ Allowed origins
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://aiflow-1-git-main-amrita-mishras-projects.vercel.app/' // 🔁 Replace this with your actual Vercel frontend URL
+  'https://aiflow-1-git-main-amrita-mishras-projects.vercel.app',
 ];
 
-// ✅ CORS Configuration
+// ✅ CORS setup
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -113,7 +173,7 @@ app.use(
   })
 );
 
-// ✅ JSON body parsing
+// ✅ JSON parser
 app.use(express.json());
 
 // ✅ Clerk auth middleware
@@ -122,18 +182,29 @@ app.use(clerkMiddleware());
 // ✅ Connect to Cloudinary
 await connectCloudinary();
 
-// ✅ Test public route
+// ✅ Test route
 app.get('/', (req, res) => res.send('Server is Live!'));
 
-// ✅ Protected Routes
+// ✅ API routes (protected)
 app.use('/api/ai', requireAuth(), aiRouter);
 app.use('/api/user', requireAuth(), userRouter);
 
-// ✅ Start the server
+// ✅ Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
+
+
+
+
+
+
+
+
+
+
+
 
 
 
