@@ -28,10 +28,13 @@ const WriteArticle = () => {
       setLoading(true)
       const prompt = `Write an article about ${input} in ${selectedLength.text}`
 
-      const {data} = await axios.post('/api/ai/generate-article', {prompt, length:selectedLength.length}, {
-        headers: {Authorization: `Bearer ${await getToken()}`}
-      })
-
+      // const {data} = await axios.post('/api/ai/generate-article', {prompt, length:selectedLength.length}, {
+      //   headers: {Authorization: `Bearer ${await getToken()}`}
+      // })
+const { data } = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/ai/generate-article`, { prompt, length: selectedLength.length }, {
+  headers: { Authorization: `Bearer ${await getToken()}` },
+  withCredentials: true
+})
       if(data.success){
         setContent(data.content)
       }else{
