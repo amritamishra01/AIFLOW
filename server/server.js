@@ -77,6 +77,20 @@ import aiRouter from './routes/aiRoutes.js';
 import connectCloudinary from './configs/cloudinary.js';
 import userRouter from './routes/userRoutes.js';
 
+
+
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: "https://aiflow-1-git-main-amrita-mishras-projects.vercel.app",
+    credentials: true, // if using cookies or auth
+  })
+);
+
+
+
+
 const app = express();
 
 // ✅ Allowed origins for CORS
