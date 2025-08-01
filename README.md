@@ -50,16 +50,12 @@ AIflow is a modern SaaS platform that helps users generate content using AI. It 
 
 ## 📸 Screenshots
 
-### 🔐 Login Page
-![Login Page](./screenshots/login-page.png)
-
-### 📊 Dashboard with Tools
-![Dashboard](./screenshots/dashboard-tools.png)
-
-### 🧠 AI Generation Interface
-![AI Generator](./screenshots/ai-generator-interface.png)
-
----
+| Feature              | Preview                                                   |
+|----------------------|-----------------------------------------------------------|
+| **Login Page**       | ![Login](./Screenshot%202025-08-02%20012653.png)          |
+| **Dashboard**        | ![Dashboard](./Screenshot%202025-08-02%20013831.png)      |
+| **Image Generator**  | ![Image Generator](./Screenshot%202025-08-02%20014041.png)|
+| **Community Post**   | ![Community](./Screenshot%202025-08-02%20014113.png)      |
 
 ## 🌐 Live Demo
 
