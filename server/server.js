@@ -156,6 +156,7 @@ const app = express();
 // ✅ Allowed origins
 const allowedOrigins = [
   'http://localhost:5173',
+  'https://aiflow-1.vercel.app',
   'https://aiflow-1-git-main-amrita-mishras-projects.vercel.app',
 ];
 
@@ -213,3 +214,8 @@ app.listen(PORT, () => {
 
 
 // just change the local url over here so that it will work smooth check line 84
+
+
+///1. Open Render → Restart backend
+//2. Wait 30–60 seconds
+//3. Open the Vercel link
